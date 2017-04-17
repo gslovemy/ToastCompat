@@ -35,7 +35,22 @@
   - 直接拷贝源码到项目中,简单暴力直接,有点重口味了,同时源码也不多。   
   ![](http://i.imgur.com/V3FmFFS.png)
   - 直接引入库  
-   compile 'com.gs:ToastCompat:1.0.0'
+   compile 'com.gs:ToastCompat:1.0.0'   
+     > 具体调用api方法     
+     1.单列   
+          ` new CustomToast.Builder(this).setIsSingle(true).setText("你好").build()
+                .show();`  
+     2.自定义时间      
+          ` new CustomToast.Builder(this).setText("你好").setDuration(2000).build()
+                .show();`   
+  	 3.自定义View   
+      `ImageView imageView = new ImageView(this);      
+        imageView.setImageResource(R.mipmap.ic_launcher);   
+        new CustomToast.Builder(this).setIsSingle(true).setView(imageView).setDuration(2000).build()
+                .show();`   
+	 4.复合使用   
+      `new CustomToast.Builder(this).setIsSingle(true).setText("你好").setDuration(2000).build()
+                .show();`
 * 效果展示  
   ![](http://i.imgur.com/vdeEWfN.gif)
 * Thanks  
